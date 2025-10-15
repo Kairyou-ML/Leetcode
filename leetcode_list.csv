@@ -1,0 +1,91 @@
+﻿#,LeetCode Problem,Skills Developed
+1,Longest Palindromic Substring,"Dynamic Programming, String Manipulation"
+2,Integer to English Words,"Math, String Formatting"
+3,Compare Version Numbers,"String Parsing, Two Pointers"
+4,Longest Substring Without Repeating Characters,"Sliding Window, Hash Table"
+5,Find the Closest Palindrome,"String Manipulation, Math"
+6,Longest Duplicate Substring,"Rolling Hash, Binary Search"
+7,String to Integer (atoi),"String Parsing, Implementation"
+8,Regular Expression Matching,"Dynamic Programming, Recursion"
+9,Largest Number,"Sorting, Greedy"
+10,Longest Valid Parentheses,"Stack, Dynamic Programming"
+11,Interleaving String,Dynamic Programming
+12,Decode Ways,Dynamic Programming
+13,Reverse Words in a String,String Manipulation
+14,Wildcard Matching,"Dynamic Programming, String Pattern Matching"
+15,Valid Parenthesis String,"Stack, Greedy, DP"
+16,Remove K Digits,"Monotonic Stack, Greedy"
+17,Palindrome Partitioning II,Dynamic Programming
+18,Decode Ways II,"DP, Combinatorics"
+19,Repeated String Match,"String, Searching"
+20,Validate IP Address,String Parsing
+21,One Edit Distance,"Dynamic Programming, Two Pointers"
+22,Valid Number,"String Parsing, FSM"
+23,Substring with Concatenation of All Words,"Sliding Window, Hash Table"
+24,Strong Password Checker,"String Manipulation, Greedy"
+25,Fraction to Recurring Decimal,"Hash Table, Math"
+26,Text Justification,"String Formatting, Simulation"
+27,Shortest Palindrome,"Rolling Hash, KMP"
+28,Making File Names Unique,"Hash Table, Implementation"
+29,Decoded String at Index,"Stack, Math, Simulation"
+30,Split Array With Same Average,"Bitmask, Math, DP"
+31,Count The Repetitions,"DP, Simulation"
+32,Median of Two Sorted Arrays,"Binary Search, Divide & Conquer"
+33,3Sum,"Sorting, Two Pointers"
+34,Jump Game II,"Greedy, DP"
+35,Maximum Product Subarray,"DP, Math"
+36,Next Permutation,Array Manipulation
+37,132 Pattern,"Stack, Monotonic"
+38,Maximum Number of Events That Can Be Attended,"Heap, Greedy"
+39,Surrounded Regions,"Union Find, DFS"
+40,Max Points on a Line,"Geometry, Hash Map"
+41,Next Greater Element III,"Math, Permutation"
+42,Shortest Unsorted Continuous Subarray,"Sorting, Stack"
+43,Reverse Pairs,"Divide and Conquer, Merge Sort"
+44,Shortest Subarray with Sum at Least K,"Deque, Binary Search"
+45,Shortest Subarray to be Removed to Make Array Sorted,"Two Pointers, Greedy"
+46,Water and Jug Problem,"Math, BFS"
+47,Self Crossing,"Geometry, Simulation"
+48,Non-decreasing Array,Array Manipulation
+49,Continuous Subarray Sum,"Prefix Sum, Hash Map"
+50,Dungeon Game,Dynamic Programming
+51,Wiggle Sort II,"Sorting, Greedy"
+52,Ways to Split Array Into Three Subarrays,"Binary Search, Prefix Sum"
+53,Maximum Non Negative Product in a Matrix,DP
+54,Frequency of the Most Frequent Element,"Sliding Window, Math"
+55,Maximum Number of Visible Points,"Geometry, Sliding Window"
+56,Closest Room,"Binary Search, Sorting"
+57,Minimize the Difference Between Target and Chosen Elements,DP
+58,Word Ladder,"BFS, Graph"
+59,Word Ladder II,"BFS, Graph, Path Reconstruction"
+60,All O(1) Data Structure,"Hash Table, Design"
+61,Contains Duplicate III,"Sliding Window, TreeSet"
+62,Invalid Transactions,"Hash Map, Simulation"
+63,Count Good Meals,"Hash Map, Combinatorics"
+64,Make Sum Divisible by P,"Prefix Sum, Hash Map"
+65,Line Reflection,Geometry
+66,Best Time to Buy and Sell Stock IV,Dynamic Programming
+67,Maximum Score from Performing Multiplication Operations,DP
+68,Super Egg Drop,"DP, Binary Search"
+69,Integer Replacement,"DP, Bit Manipulation"
+70,Largest Multiple of Three,"DP, Greedy"
+71,Number of Digit One,"Math, Digit DP"
+72,Sum of Square Numbers,"Math, Two Pointers"
+73,Nth Digit,Math
+74,"Pow(x, n)","Binary Search, Math"
+75,Create Maximum Number,"Greedy, Stack"
+76,Alien Dictionary,"Graph, Topological Sort"
+77,Validate Binary Search Tree,"Tree, DFS"
+78,Redundant Connection II,"Union Find, Graph"
+79,Kth Ancestor of a Tree Node,"Tree, Binary Lifting"
+80,Divide Two Integers,Bit Manipulation
+81,Design Twitter,"Design, Heap"
+82,Design Linked List,"Design, Linked List"
+83,Rotate List,Linked List
+84,Insert into a Sorted Circular Linked List,Linked List
+85,Nth Highest Salary,"SQL, Database"
+86,Word Frequency,SQL
+87,Longest Common Subpath,"Rolling Hash, Suffix Array"
+88,Prime Palindrome,"Math, Palindrome Check"
+89,Minimum Space Wasted From Packaging,"Binary Search, Greedy"
+90,Sell Diminishing-Valued Colored Balls,"Greedy, Heap"
