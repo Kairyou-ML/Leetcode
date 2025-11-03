@@ -1,5 +1,5 @@
 # -------------------------------------------------
-# LeetCode Problem 564: Find the Closest Palindrome
+# Find the Closest Palindrome
 # -------------------------------------------------
 # Description:
 # Given a string n representing an integer, return the closest 
