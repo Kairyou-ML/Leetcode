@@ -1,6 +1,6 @@
-# ---------------------------
+# -------------------------------------------------------------
 # Longest Duplicate Substring
-# ----------------------------
+# -------------------------------------------------------------
 # Description:
 # Given a string s, return the longest substring of s that appears 
 # at least twice. The two occurrences may overlap.
@@ -99,7 +99,6 @@ sol = Solution()
 # -------------------------------------------------------------
 # Example Runs (uncomment to test)
 # -------------------------------------------------------------
-
 # print(sol.longestDupSubstring("banana"))  # Output: "ana"
 # print(sol.longestDupSubstring("abcd"))    # Output: ""
 # print(sol.longestDupSubstring("aaaaa"))   # Output: "aaaa"
