@@ -1,104 +1,106 @@
-# -------------------------------------------------------------
-# Longest Duplicate Substring
-# -------------------------------------------------------------
+# ---------------------------
+# String to Integer (atoi)
+# ---------------------------
 # Description:
-# Given a string s, return the longest substring of s that appears 
-# at least twice. The two occurrences may overlap.
+# Implement the function myAtoi(string s), which converts a string
+# into a 32-bit signed integer (similar to the C/C++ atoi function).
 #
-# If no such substring exists, return an empty string "".
+# Conversion Rules:
+# 1. Skip all leading whitespace.
+# 2. Read an optional '+' or '-' sign.
+# 3. Read digits continuously and convert them into an integer.
+# 4. Stop reading at the first non-digit character.
+#
+# Overflow Rules:
+# - If the value exceeds the 32-bit signed integer range:
+#       Return  2_147_483_647   (INT_MAX)
+#       Return -2_147_483_648   (INT_MIN)
+#
+# If no valid conversion can be performed, return 0.
 #
 # -------------------------------------------------------------
 # Examples:
 # Example 1:
-#   Input:  s = "banana"
-#   Output: "ana"
+#   Input:  s = "42"
+#   Output: 42
 #
 # Example 2:
-#   Input:  s = "abcd"
-#   Output: ""
+#   Input:  s = "   -42"
+#   Output: -42
+#
+# Example 3:
+#   Input:  s = "4193 with words"
+#   Output: 4193
+#
+# Example 4:
+#   Input:  s = "words and 987"
+#   Output: 0
+#
+# Example 5:
+#   Input:  s = "-91283472332"
+#   Output: -2147483648   # Clamped to INT_MIN
 #
 # -------------------------------------------------------------
 # Constraints:
-#   2 <= len(s) <= 3 * 10^4
-#   s consists of lowercase English letters.
+#   0 <= len(s) <= 200
+#   s may contain letters, digits, spaces, and symbols.
 # -------------------------------------------------------------
-# Approach Used: Rolling Hash + Binary Search
+# Approach Used: String Parsing + Implementation
 # -------------------------------------------------------------
 # Idea:
-# - We are asked to find the longest substring that repeats.
-# - Observation: if there is a duplicate substring of length L,
-#   there must be one of length < L too.
-#   → This means we can apply **binary search** on the length L.
+# - Move through the string while skipping leading whitespace.
+# - Determine the sign of the number.
+# - Read digit characters and form the number.
+# - Apply 32-bit overflow clamping during accumulation.
 #
-# - For each candidate length L:
-#     1. Compute rolling hashes of all substrings of length L.
-#     2. Use a hash set to check for collisions (duplicate hash values).
-#     3. Use modulo arithmetic to prevent overflow.
+# Key Points:
+#   • No need for complex parsing logic.
+#   • Must check overflow before multiplying and adding digits.
 #
-# - Continue binary searching until we find the largest L with a duplicate.
-#
-# Key Algorithmic Tools:
-#   • Binary Search → O(log n)
-#   • Rolling Hash (Rabin–Karp) → O(n)
-#
-# Overall Time Complexity:  O(n log n)
-# Space Complexity:         O(n)
+# Overall Time Complexity:  O(n)
+# Space Complexity:         O(1)
 # -------------------------------------------------------------
 
 
 class Solution:
-    def longestDupSubstring(self, s: str) -> str:
-        import random
+    def myAtoi(self, s: str) -> int:
 
+        INT_MAX = 2_147_483_647
+        INT_MIN = -2_147_483_648
+
+        i = 0
         n = len(s)
-        # Map characters to integers: a → 0, b → 1, ..., z → 25
-        nums = [ord(c) - ord('a') for c in s]
 
-        # Choose a large random base and modulus for hashing
-        base = random.randint(26, 100)
-        mod = 2**63 - 1  # Large prime-like modulus
+        # 1. Skip leading spaces
+        while i < n and s[i] == " ":
+            i += 1
 
-        # Helper function to search for duplicate substring of given length
-        def search(L: int) -> int:
-            """Return starting index of duplicate substring of length L, else -1."""
-            h = 0
-            for i in range(L):
-                h = (h * base + nums[i]) % mod
-            seen = {h}
+        # 2. Read sign
+        sign = 1
+        if i < n and s[i] in ["+", "-"]:
+            sign = -1 if s[i] == "-" else 1
+            i += 1
 
-            # Precompute base^L % mod
-            baseL = pow(base, L, mod)
+        # 3. Convert digits
+        result = 0
+        while i < n and s[i].isdigit():
+            digit = ord(s[i]) - ord("0")
 
-            for start in range(1, n - L + 1):
-                # Rolling hash update: remove left char, add new right char
-                h = (h * base - nums[start - 1] * baseL + nums[start + L - 1]) % mod
-                if h in seen:
-                    return start
-                seen.add(h)
-            return -1
+            # Overflow check before multiplying
+            if result > (INT_MAX - digit) // 10:
+                return INT_MAX if sign == 1 else INT_MIN
 
-        # Binary search on substring length
-        left, right = 1, n
-        start = -1
+            result = result * 10 + digit
+            i += 1
 
-        while left <= right:
-            mid = (left + right) // 2
-            idx = search(mid)
-            if idx != -1:
-                # Found duplicate of length mid → try longer
-                left = mid + 1
-                start = idx
-            else:
-                right = mid - 1
-
-        # Return the substring using final found length
-        L = left - 1
-        return s[start:start + L] if start != -1 else ""
+        return result * sign
 
 sol = Solution()
 # -------------------------------------------------------------
 # Example Runs (uncomment to test)
 # -------------------------------------------------------------
-# print(sol.longestDupSubstring("banana"))  # Output: "ana"
-# print(sol.longestDupSubstring("abcd"))    # Output: ""
-# print(sol.longestDupSubstring("aaaaa"))   # Output: "aaaa"
+# print(sol.myAtoi("42"))              # 42
+# print(sol.myAtoi("   -42"))          # -42
+# print(sol.myAtoi("4193 with words")) # 4193
+# print(sol.myAtoi("words and 987"))   # 0
+# print(sol.myAtoi("-91283472332"))    # -2147483648
